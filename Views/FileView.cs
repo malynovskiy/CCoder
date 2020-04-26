@@ -39,6 +39,12 @@ namespace CCoder.Views
 
         private void SaveFile()
         {
+            if (Document.FilePath == null || Document.FilePath.Length == 0)
+            {
+                SaveFileAs();
+                return;
+            }
+
             File.WriteAllText(Document.FilePath, Document.Text);
         }
         private void SaveFileAs()

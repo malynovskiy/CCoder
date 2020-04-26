@@ -15,49 +15,67 @@
     <Window.Resources>
         <SolidColorBrush x:Key="DefaultBackground" Color="#2C3338"/>
         <SolidColorBrush x:Key="SecondaryBackground" Color="#FF3F464B"/>
+        <SolidColorBrush x:Key="DefaultForeground" Color="#FFD6D6D6"/>
 
-        <Style TargetType="Menu" x:Key="DefaultMenu">
+        <Style TargetType="Menu" 
+               x:Key="DefaultMenu">
             <Setter Property="Background" Value="{StaticResource DefaultBackground}"/>
+        </Style>
+        
+        <Style TargetType="MenuItem"
+               x:Key="MainMenuItem">
+            <Setter Property="Background" Value="{StaticResource DefaultBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource DefaultForeground}"/>
+            <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="ClipToBounds" Value="True"/>
+        </Style>
+
+        <Style TargetType="MenuItem"
+               x:Key="DropDownMenuItem">
+            <Setter Property="Background" Value="{StaticResource DefaultBackground}"/>
+            <Setter Property="Foreground" Value="#ababac"/>
+            <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="ClipToBounds" Value="True"/>
         </Style>
     </Window.Resources>
     
     <DockPanel Margin="1">
         <Menu DockPanel.Dock="Left" Style="{StaticResource DefaultMenu}">
-            <MenuItem Width="45px" Height="32px"/>
+            
         </Menu>
         <Menu DockPanel.Dock="Top" Style="{StaticResource DefaultMenu}">
-            <MenuItem 
-                    Header="File" 
-                    DataContext="{Binding File}" 
-                    FontFamily="Segoe UI Semibold" 
-                    Foreground="#FFD6D6D6" 
-                    FontSize="14"
-                    Height="32"
-                    Background="{StaticResource DefaultBackground}">
-                <MenuItem Header="New" Command="{Binding NewCommand}" Background="{StaticResource DefaultBackground}"/>
+            <MenuItem Style="{StaticResource MainMenuItem}">
+                <MenuItem.Header>
+                    <StackPanel Background="{StaticResource DefaultBackground}">
+                        <Image Width="20" Height="20" Source="Content/Images/logo.png" />
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Header="File" 
+                      DataContext="{Binding File}"
+                      Style="{StaticResource MainMenuItem}"
+                      ItemContainerStyle="{StaticResource DropDownMenuItem}">
+                <MenuItem Header="New" Command="{Binding NewCommand}"/>
                 <MenuItem Header="Open" Command="{Binding OpenCommand}"/>
                 <MenuItem Header="Save" Command="{Binding SaveCommand}"/>
                 <MenuItem Header="Save as" Command="{Binding SaveAsCommand}"/>
             </MenuItem>
-            <MenuItem 
-                    Header="Preferences"    
-                    DataContext="{Binding Editor}"
-                    FontFamily="Segoe UI Semibold" 
-                    Foreground="#FFD6D6D6" 
-                    FontSize="14"
-                    Height="32">
+            <MenuItem Header="Preferences" 
+                      DataContext="{Binding Editor}"
+                      Style="{StaticResource MainMenuItem}">
                 <MenuItem Header="Font" Command="{Binding FormatCommand}"/>
             </MenuItem>
-            <MenuItem 
-                        Header="Help" 
-                        DataContext="{Binding Help}"
-                        FontFamily="Segoe UI Semibold" 
-                        Foreground="#FFD6D6D6"  
-                        FontSize="14"
-                        Height="32">
+            <MenuItem Header="Help"
+                      DataContext="{Binding Help}"
+                      Style="{StaticResource MainMenuItem}">
                 <MenuItem Header="About" Command="{Binding HelpCommand}"/>
             </MenuItem>
         </Menu>
+        
         <DockPanel>
             <TextBlock
                     DockPanel.Dock="Bottom"

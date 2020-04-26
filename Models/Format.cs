@@ -10,15 +10,12 @@ namespace CCoder.Models
 {
     public class Format : Observer
     {
-        /*Format() : base()
+        public Format() : base()
         {
             // setting default format values
-            /*_style = ;
-            _weight;
-            _family;
-            _wrap;
-            _size;*/
-        //}
+            _family = new FontFamily("Consolas");
+            _size = 14.5f;
+        }
 
         public FontStyle Style
         {
