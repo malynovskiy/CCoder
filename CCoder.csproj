@@ -58,6 +58,7 @@
     <Compile Include="FontDialog.xaml.cs">
       <DependentUpon>FontDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Lexer.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Views\EditorView.cs" />
     <Compile Include="Views\FileView.cs" />
