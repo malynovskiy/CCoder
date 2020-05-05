@@ -95,7 +95,8 @@
                     Text="{
                         Binding Document.Text, 
                         Mode=TwoWay,
-                        UpdateSourceTrigger=PropertyChanged}" 
+                        UpdateSourceTrigger=PropertyChanged}"
+                    TextChanged="onTextChanged"
                     Background="#FF3F464B" 
                     Height="701" 
                     SpellCheck.IsEnabled="false"/>

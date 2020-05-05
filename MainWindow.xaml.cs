@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CCoder.Models;
+using CCoder.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,13 @@ namespace CCoder
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void onTextChanged(object sender, TextChangedEventArgs eventArgs)
+        {
+            MainView view = (MainView)DataContext;
+            if(view != null)
+                view.Editor.TextChangeHandler(ref sender, ref eventArgs);
         }
     }
 }
