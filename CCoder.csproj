@@ -55,15 +55,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\DrawingElement.cs" />
+    <Compile Include="Controls\ModernTextBox.xaml.cs">
+      <DependentUpon>ModernTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FontDialog.xaml.cs">
       <DependentUpon>FontDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lexer.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="Utilities.cs" />
     <Compile Include="Views\EditorView.cs" />
     <Compile Include="Views\FileView.cs" />
     <Compile Include="Views\HelpView.cs" />
     <Compile Include="Views\MainView.cs" />
+    <Page Include="Controls\ModernTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FontDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
