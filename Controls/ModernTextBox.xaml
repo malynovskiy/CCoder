@@ -1,0 +1,70 @@
+﻿<TextBox 
+        x:Class="CCoder.Controls.ModernTextBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CCoder.Controls"
+  
+        TextWrapping="NoWrap" 
+		Foreground="#00000000">
+        <!--Wraping and Foreground PLACEHOLDERs for now-->
+        <!--TODO(Maksym): revisit this later-->
+    
+    <!--Style is PLACEHOKDER for now too-->
+    <!--TODO(Maksym): revisit this later-->
+    <TextBox.Style>
+        <Style TargetType="{x:Type local:ModernTextBox}">
+            <Setter Property="AcceptsReturn" Value="True" />
+            <Setter Property="AcceptsTab" Value="True" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="FontFamily" Value="Courier New" />
+            <Setter Property="FontSize" Value="14pt" />
+        </Style>
+    </TextBox.Style>
+    
+    <TextBox.Template>
+        <ControlTemplate TargetType="{x:Type local:ModernTextBox}">
+            <!--Visual-->
+            <Border
+                    Background="White"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    BorderBrush="{TemplateBinding BorderBrush}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <local:DrawingElement x:Name="PART_LineNumbersCanvas"
+                                          Grid.Column="0" ClipToBounds="True"/>
+
+                    <Line x:Name="lineNumbersDivider"
+                          Grid.Column="1" Margin="2,0,5,0" Stroke="Gray" StrokeThickness="1" Y2="1" Stretch="Fill"
+                          StrokeDashArray="1,1" RenderOptions.EdgeMode="Aliased"/>
+
+                    <Grid Grid.Column="2">
+                        <!--Main Render Code Canvas-->
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <local:DrawingElement x:Name="PART_CodeRenderCanvas" ClipToBounds="True"
+                                                  TextOptions.TextRenderingMode="ClearType" 
+                                                  TextOptions.TextFormattingMode="Display"/>
+                        </Grid>
+                        <!--Transparent input textbox-->
+                        <ScrollViewer x:Name="PART_CodeInput" Background="#00FFFFFF"/>
+                    </Grid>
+                </Grid>
+            </Border>
+            
+            <!--Triggers-->
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsLineNumberMarginVisible" Value="False">
+                    <Setter TargetName="PART_LineNumbersCanvas" Property="Visibility" Value="Collapsed"/>
+                    <Setter TargetName="lineNumbersDivider" Property="Visibility" Value="Collapsed" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </TextBox.Template>
+</TextBox>
