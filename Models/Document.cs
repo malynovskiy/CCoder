@@ -8,9 +8,6 @@ namespace CCoder.Models
 {
     public class Document : Observer
     {
-        private string _text;
-        private string _filePath;
-        private string _fileName;
         public string Text
         {
             get { return _text; }
@@ -40,5 +37,9 @@ namespace CCoder.Models
                 return false;
             }
         }
+
+        private string _text;
+        private string _filePath;
+        private string _fileName;
     }
 }
