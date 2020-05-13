@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -139,7 +140,31 @@ namespace CCoder.Controls
 
         private void FormatTextBlock(InnerTextBlock currentBlock, InnerTextBlock previousBlock)
         {
-            currentBlock.FormattedText = GetFormattedText();
+            currentBlock.FormattedText = GetFormattedText(currentBlock.RawText);
+            if (CurrentHighlighter != null)
+            {
+                ThreadPool.QueueUserWorkItem(p =>
+                {
+                    int previousCode = previousBlock != null ? previousBlock.Code : -1;
+                    //currentBlock.Code = CurrentHighlighter.Highlight(currentBlock.FormattedText, previousCode);
+                });
+            }
+        }
+
+        private FormattedText GetFormattedText(string text)
+        {
+            FormattedText ft = new FormattedText(
+                text,
+                System.Globalization.CultureInfo.InvariantCulture,
+                FlowDirection.LeftToRight,
+                new Typeface(FontFamily, FontStyle, FontWeight, FontStretch),
+                FontSize,
+                Brushes.Black);
+
+            ft.Trimming = TextTrimming.None;
+            ft.LineHeight = lineHeight;
+
+            return ft;
         }
 
         private FormattedText GetFormattedLineNumbers(int firstIndex, int lastIndex)
