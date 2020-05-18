@@ -8,34 +8,33 @@ using System.Windows.Media;
 
 namespace CCoder.Controls
 {
-    public class DrawingElement : FrameworkElement
-    { 
-        public DrawingElement()
-        {
-            drawingVisual = new DrawingVisual();
-            visualsCollection = new VisualCollection(this);
+	public class DrawingElement : FrameworkElement
+	{
+		private VisualCollection visuals;
+		private DrawingVisual visual;
 
-            visualsCollection.Add(drawingVisual);
-        }
+		public DrawingElement()
+		{
+			visual = new DrawingVisual();
+			visuals = new VisualCollection(this);
+			visuals.Add(visual);
+		}
 
-        public DrawingContext GetContext()
-        {
-            return drawingVisual.RenderOpen();
-        }
+		public DrawingContext GetContext()
+		{
+			return visual.RenderOpen();
+		}
 
-        protected override int VisualChildrenCount
-        {
-            get { return visualsCollection.Count; }
-        }
+		protected override int VisualChildrenCount
+		{
+			get { return visuals.Count; }
+		}
 
-        protected override Visual GetVisualChild(int i)
-        {
-            if (i < 0 || i >= visualsCollection.Count)
-                throw new ArgumentOutOfRangeException();
-            return visualsCollection[i];
-        }
-
-        private DrawingVisual drawingVisual;
-        private VisualCollection visualsCollection;
-    }
+		protected override Visual GetVisualChild(int index)
+		{
+			if (index < 0 || index >= visuals.Count)
+				throw new ArgumentOutOfRangeException();
+			return visuals[index];
+		}
+	}
 }
