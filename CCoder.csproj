@@ -62,6 +62,7 @@
     <Compile Include="FontDialog.xaml.cs">
       <DependentUpon>FontDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HighlightingManager.cs" />
     <Compile Include="Lexer.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Utilities.cs" />
@@ -117,7 +118,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\TestSyntax.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\syntax.xsd" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CBaseSyntax.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
