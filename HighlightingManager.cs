@@ -18,19 +18,18 @@ using System.Data;
 
 namespace CCoder
 {
-    public class HighlightManager
+    public class HighlightingManager
     {
-        private static HighlightManager instance = new HighlightManager();
-        public static HighlightManager Instance { get { return instance; } }
+        private static HighlightingManager instance = new HighlightingManager();
+        public static HighlightingManager Instance { get { return instance; } }
 
         public IDictionary<string, Highlighter> Highlighters { get; private set; }
 
-        private HighlightManager()
+        private HighlightingManager()
         {
             Highlighters = new Dictionary<string, Highlighter>();
 
-            var resourceStream = Application.GetResourceStream(
-                new Uri("pack://application:,,,/AurelienRibon.Ui.SyntaxHighlightBox;component/resources/syntax.xsd"));
+            var resourceStream = Application.GetResourceStream(new Uri("pack://application:,,,/CCoder;component/Resources/syntax.xsd"));
 
             var schemaStream = resourceStream.Stream;
             XmlSchema schema = XmlSchema.Read(schemaStream, (s, e) => {
@@ -41,7 +40,7 @@ namespace CCoder
             readerSettings.Schemas.Add(schema);
             readerSettings.ValidationType = ValidationType.Schema;
 
-            foreach (var res in GetResources("Resources/Highlighters/(.+?)[.]xml"))
+            foreach (var res in GetResources("resources/(.+?)[.]xml"))
             {
                 XDocument xmldoc = null;
                 try
@@ -89,7 +88,7 @@ namespace CCoder
             return ret;
         }
 
-        public  class Highlighter
+        public class Highlighter
         {
             private List<HighlightWordRule> wordRules;
             private List<HighlightLineRule> lineRules;
@@ -121,6 +120,10 @@ namespace CCoder
             // TODO(Maksym): Revisit this later in case of performance improvements
             public int Highlight(FormattedText text)
             {
+                text.SetForegroundBrush(Brushes.White);
+                text.SetFontWeight(FontWeights.Normal);
+                text.SetFontStyle(FontStyles.Normal);
+
                 // WORDS RULES
                 Regex wordsRgx = new Regex("[a-zA-Z_][a-zA-Z0-9_]*");
                 foreach (Match m in wordsRgx.Matches(text.Text))
