@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Syntax name="CBaseSyntax">
+
+  <HighlightWordRule name="Preprocesor words and etc">
+    <Words>
+      define include namespace
+      typedef DEFINE
+    </Words>
+    <IgnoreCase>true</IgnoreCase>
+    <Foreground>#F85C50</Foreground>
+    <FontWeight>Normal</FontWeight>
+    <FontStyle>Normal</FontStyle>
+  </HighlightWordRule>
+
+  <HighlightWordRule name="Reserved language words">
+    <Words>
+    	if else elseif while return for do
+			switch delete new case break
+    </Words>
+    <IgnoreCase>true</IgnoreCase>
+    <Foreground>#BE5D77</Foreground>
+    <FontWeight>Normal</FontWeight>
+    <FontStyle>Normal</FontStyle>
+  </HighlightWordRule>
+
+	<HighlightWordRule name="Standard types">
+		<Words>
+      int float double void long char
+			boolean bit character  integer real bool
+		</Words>
+		<IgnoreCase>true</IgnoreCase>
+		<Foreground>#64C7FF</Foreground>
+		<FontWeight>Normal</FontWeight>
+		<FontStyle>Normal</FontStyle>
+	</HighlightWordRule>
+  <HighlightWordRule name="Complex types">
+    <Words>
+      time delay_length natural positive string bit_vector file_open_kind
+      file_open_status line text side std_ulogic
+      std_ulogic_vector std_logic std_logic_vector X01 X01Z UX01 UX01Z
+      unsigned signed HANDLE Word
+
+      vector pair size_t map 
+    </Words>
+    <IgnoreCase>true</IgnoreCase>
+    <Foreground>#41B619</Foreground>
+    <FontWeight>Normal</FontWeight>
+    <FontStyle>Normal</FontStyle>
+  </HighlightWordRule>
+  
+  <HighlightWordRule name="Com	plex types definitions">
+  <Words>
+    class struct typedef enum
+  </Words>
+  <IgnoreCase>true</IgnoreCase>
+  <Foreground>#45D09E</Foreground>
+  <FontWeight>Normal</FontWeight>
+  <FontStyle>Normal</FontStyle>
+</HighlightWordRule>
+  
+  <HighlightWordRule name="Defines">
+		<Words>
+			STD_OUTPUT_HANDLE EOF
+		</Words>
+		<IgnoreCase>true</IgnoreCase>
+		<Foreground>#F85C50</Foreground>
+		<FontWeight>Normal</FontWeight>
+		<FontStyle>Normal</FontStyle>
+	</HighlightWordRule>
+
+	<HighlightWordRule name="Other type modificators">
+		<Words>
+			 static inline const auto extern
+       
+       std
+		</Words>
+		<IgnoreCase>true</IgnoreCase>
+		<Foreground>#64C7FF</Foreground>
+		<FontWeight>Normal</FontWeight>
+		<FontStyle>Normal</FontStyle>
+	</HighlightWordRule>
+	<HighlightWordRule name="Some funcs">
+		<Words>
+      printf scanf getchar getChar cout cin
+      isalnum isdigit strtod c_str make_pair
+    </Words>
+		<IgnoreCase>false</IgnoreCase>
+		<Foreground>#FFC46B</Foreground>
+		<FontWeight>Normal</FontWeight>
+		<FontStyle>Normal</FontStyle>
+	</HighlightWordRule>
+
+  <HighlightLineRule name="Comments">
+		<LineStart>//</LineStart>
+		<IgnoreCase>false</IgnoreCase>
+		<Foreground>#009933</Foreground>
+		<FontWeight>Normal</FontWeight>
+		<FontStyle>Normal</FontStyle>
+	</HighlightLineRule>
+  
+	<HighlightRegexRule name="Numbers">
+		<Expression>\b([0-9]+)\b</Expression>
+		<IgnoreCase>false</IgnoreCase>
+		<Foreground>#F68A1B</Foreground>
+		<FontWeight>Normal</FontWeight>
+		<FontStyle>Normal</FontStyle>
+	</HighlightRegexRule>
+
+  <HighlightRegexRule name="Literal strings">
+    <Expression>\"(.+?)\"</Expression>
+    <IgnoreCase>true</IgnoreCase>
+    <Foreground>#FB9F82</Foreground>
+    <FontWeight>Normal</FontWeight>
+    <FontStyle>Normal</FontStyle>
+  </HighlightRegexRule>
+</Syntax>
