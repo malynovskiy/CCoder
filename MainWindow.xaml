@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CCoder"
         xmlns:views="clr-namespace:CCoder.Views"
+        xmlns:controls="clr-namespace:CCoder.Controls"
         mc:Ignorable="d"
         Title="CCoder" Height="768" Width="1024" Background="#FF2C3338">
 
@@ -51,7 +52,8 @@
             <MenuItem Style="{StaticResource MainMenuItem}">
                 <MenuItem.Header>
                     <StackPanel Background="{StaticResource DefaultBackground}">
-                        <Image Width="20" Height="20" Source="Content/Images/logo.png" />
+                        <!--TODO(Maksym): revisit logo later, not work-->
+                        <Image Width="20" Height="20" Source="Resources/Images/logo.png" />
                     </StackPanel>
                 </MenuItem.Header>
             </MenuItem>
@@ -82,6 +84,9 @@
                     DataContext="{Binding File.Document}"
                     Text="{Binding FilePath}"/>
             <TextBox
+            <controls:ModernTextBox 
+                    x:Name="CodeTextBox"
+                    IsLineNumbersMarginVisible="True"/>
             <!--TextBox
                     DockPanel.Dock="Top"
                     VerticalScrollBarVisibility="Visible"

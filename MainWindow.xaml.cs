@@ -25,6 +25,7 @@ namespace CCoder
         public MainWindow()
         {
             InitializeComponent();
+            CodeTextBox.Highlighter = HighlightingManager.Instance.Highlighters["CBaseSyntax"];
         }
 
         private void onTextChanged(object sender, TextChangedEventArgs eventArgs)
