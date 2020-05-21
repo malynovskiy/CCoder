@@ -83,7 +83,17 @@
                     DockPanel.Dock="Bottom"
                     DataContext="{Binding File.Document}"
                     Text="{Binding FilePath}"/>
-            <TextBox
+            
+            <TextBox 
+                    x:Name="FileTextBox"
+                    Height="0" Width="0"
+                    DataContext="{Binding Editor}"
+                    Text="{
+                        Binding Document.Text, 
+                        Mode=TwoWay,
+                        UpdateSourceTrigger=PropertyChanged}"
+                    TextChanged="onTextChanged"/>
+            
             <controls:ModernTextBox 
                     x:Name="CodeTextBox"
                     IsLineNumbersMarginVisible="True"/>
