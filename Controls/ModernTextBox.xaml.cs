@@ -87,8 +87,8 @@ namespace CCoder.Controls
             Loaded += (s, e) =>
             {
                 renderCanvas = (DrawingElement)Template.FindName("PART_CodeRenderCanvas", this);
-                lineNumbersCanvas = (DrawingElement)Template.FindName("PART_0", this);
-                scrollViewer = (ScrollViewer)Template.FindName("PART_", this);
+                lineNumbersCanvas = (DrawingElement)Template.FindName("PART_LineNumbersCanvas", this);
+                scrollViewer = (ScrollViewer)Template.FindName("PART_ContentHost", this);
 
                 lineNumbersCanvas.Width = GetFormattedTextWidth(string.Format("{0:0000}", totalLinesCount)) + 5;
 
