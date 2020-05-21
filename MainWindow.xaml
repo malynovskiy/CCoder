@@ -82,6 +82,7 @@
                     DataContext="{Binding File.Document}"
                     Text="{Binding FilePath}"/>
             <TextBox
+            <!--TextBox
                     DockPanel.Dock="Top"
                     VerticalScrollBarVisibility="Visible"
                     DataContext="{Binding Editor}"
@@ -99,7 +100,7 @@
                     TextChanged="onTextChanged"
                     Background="#FF3F464B" 
                     Height="701" 
-                    SpellCheck.IsEnabled="false"/>
+                    SpellCheck.IsEnabled="false"/-->
         </DockPanel>
     </DockPanel>
 </Window>
