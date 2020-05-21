@@ -36,6 +36,7 @@ namespace CCoder.Controls
         private int maxLineCountInBlock;
 
         private List<InnerTextBlock> textBlocks;
+        private int blocksRunningCount;
 
         public double LineHeight
         {
@@ -80,6 +81,8 @@ namespace CCoder.Controls
             LineHeight = FontSize * 1.3;
             totalLinesCount = 1;
 
+            blocksRunningCount = 0;
+
             textBlocks = new List<InnerTextBlock>();
 
             Loaded += (s, e) =>
@@ -119,6 +122,9 @@ namespace CCoder.Controls
 
         protected override void OnRender(DrawingContext drawingContext)
         {
+            while (blocksRunningCount > 0)
+                Console.WriteLine("Waiting for other threads!\n");
+
             DrawTextBlocks();
             base.OnRender(drawingContext);
         }
@@ -166,7 +172,9 @@ namespace CCoder.Controls
             {
                 ThreadPool.QueueUserWorkItem(p =>
                 {
+                    blocksRunningCount++;
                     Highlighter.Highlight(currentBlock.FormattedText);
+                    blocksRunningCount--;
                 });
             }
         }
