@@ -30,8 +30,7 @@ namespace CCoder
 
         private void onTextChanged(object sender, TextChangedEventArgs eventArgs)
         {
-            if(CodeTextBox.TextFromFile != null)
-                CodeTextBox.TextFromFile = FileTextBox.Text;
+            CodeTextBox.Text = FileTextBox.Text;
 
             //if(view != null)
             //    view.Editor.TextChangeHandler(ref sender, ref eventArgs);

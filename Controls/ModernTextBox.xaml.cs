@@ -72,19 +72,27 @@ namespace CCoder.Controls
             set { SetValue(IsLineNumbersMarginVisibleProperty, value); }
         }
 
-        public static readonly DependencyProperty TextFromFileProperty = DependencyProperty.Register(
+       /* public static readonly DependencyProperty TextFromFileProperty = DependencyProperty.Register(
             "TextFromFile", typeof(string), typeof(ModernTextBox), new PropertyMetadata(string.Empty));
 
         public string TextFromFile
         {
-            get { return (string)GetValue(TextFromFileProperty); }
+            get 
+            { 
+                return (string)GetValue(TextFromFileProperty); 
+            }
+
             set 
             { 
                 SetValue(TextFromFileProperty, value);
-                Text = value;
+
+                if (Text != value)
+                {
+                    Text = value;
+                }
             }
         }
-
+        */
         public ModernTextBox()
         {
             InitializeComponent();

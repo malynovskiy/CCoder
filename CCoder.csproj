@@ -118,9 +118,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\TestSyntax.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\syntax.xsd" />
   </ItemGroup>
   <ItemGroup>

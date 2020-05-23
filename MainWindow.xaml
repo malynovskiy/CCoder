@@ -82,8 +82,8 @@
             <TextBlock
                     DockPanel.Dock="Bottom"
                     DataContext="{Binding File.Document}"
-                    Text="{Binding FilePath}"/>
-            
+                    Text="{Binding FilePath}"
+                    Foreground="White"/>
             <TextBox 
                     x:Name="FileTextBox"
                     Height="0" Width="0"
