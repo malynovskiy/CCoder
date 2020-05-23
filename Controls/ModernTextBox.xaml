@@ -28,7 +28,7 @@
         <ControlTemplate TargetType="{x:Type local:ModernTextBox}">
             <!--Visual-->
             <Border
-                    Background="#FF3F464B"
+                    Background="#2c3338"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     BorderBrush="{TemplateBinding BorderBrush}">
                 <Grid>
@@ -38,8 +38,9 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <local:DrawingElement x:Name="PART_LineNumbersCanvas" Grid.Column="0" ClipToBounds="True"/>
-
+                    <local:DrawingElement x:Name="PART_LineNumbersCanvas"
+                                          Grid.Column="0" ClipToBounds="True"/>
+                    
                     <Line x:Name="PART_LineNumbersDivider"
                           Grid.Column="1" Margin="2,0,5,0" Stroke="Gray" StrokeThickness="1" Y2="1" Stretch="Fill"
                           StrokeDashArray="1,1" RenderOptions.EdgeMode="Aliased"/>
