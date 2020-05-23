@@ -50,7 +50,7 @@ namespace CCoder.Views
         private void SaveFileAs()
         {
             var saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text File (*.txt)|*.txt";
+            saveFileDialog.Filter = "C Source File (*.c)|*.c|C++ Source file (*.cpp)|*.cpp|All files (*.*)|*.*";
             if(saveFileDialog.ShowDialog() == true)
             {
                 DockFile(saveFileDialog);
