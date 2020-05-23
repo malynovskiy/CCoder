@@ -6,7 +6,7 @@
       define include namespace
       typedef DEFINE
     </Words>
-    <IgnoreCase>true</IgnoreCase>
+    <IgnoreCase>false</IgnoreCase>
     <Foreground>#F85C50</Foreground>
     <FontWeight>Normal</FontWeight>
     <FontStyle>Normal</FontStyle>
@@ -17,7 +17,7 @@
     	if else elseif while return for do
 			switch delete new case break
     </Words>
-    <IgnoreCase>true</IgnoreCase>
+    <IgnoreCase>false</IgnoreCase>
     <Foreground>#BE5D77</Foreground>
     <FontWeight>Normal</FontWeight>
     <FontStyle>Normal</FontStyle>
@@ -28,7 +28,7 @@
       int float double void long char
 			boolean bit character  integer real bool
 		</Words>
-		<IgnoreCase>true</IgnoreCase>
+		<IgnoreCase>false</IgnoreCase>
 		<Foreground>#64C7FF</Foreground>
 		<FontWeight>Normal</FontWeight>
 		<FontStyle>Normal</FontStyle>
@@ -42,7 +42,7 @@
 
       vector pair size_t map 
     </Words>
-    <IgnoreCase>true</IgnoreCase>
+    <IgnoreCase>false</IgnoreCase>
     <Foreground>#41B619</Foreground>
     <FontWeight>Normal</FontWeight>
     <FontStyle>Normal</FontStyle>
@@ -52,7 +52,7 @@
   <Words>
     class struct typedef enum
   </Words>
-  <IgnoreCase>true</IgnoreCase>
+  <IgnoreCase>false</IgnoreCase>
   <Foreground>#45D09E</Foreground>
   <FontWeight>Normal</FontWeight>
   <FontStyle>Normal</FontStyle>
@@ -62,7 +62,7 @@
 		<Words>
 			STD_OUTPUT_HANDLE EOF
 		</Words>
-		<IgnoreCase>true</IgnoreCase>
+		<IgnoreCase>false</IgnoreCase>
 		<Foreground>#F85C50</Foreground>
 		<FontWeight>Normal</FontWeight>
 		<FontStyle>Normal</FontStyle>
@@ -74,7 +74,7 @@
        
        std
 		</Words>
-		<IgnoreCase>true</IgnoreCase>
+		<IgnoreCase>false</IgnoreCase>
 		<Foreground>#64C7FF</Foreground>
 		<FontWeight>Normal</FontWeight>
 		<FontStyle>Normal</FontStyle>
