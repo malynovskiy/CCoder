@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:CCoder.Controls"
   
         TextWrapping="NoWrap" 
-		Foreground="#00000000">
+		Foreground="#00000000"
+        Background="Black">
         <!--Wraping and Foreground PLACEHOLDERs for now-->
         <!--TODO(Maksym): revisit this later-->
     
