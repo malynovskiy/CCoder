@@ -33,12 +33,7 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="ClipToBounds" Value="True"/>
         </Style>
-
-        <Style TargetType="MenuItem"
-               x:Key="FocusMenuItem">
-            <Setter Property="Background" Value="#2a4d5f"/>
-        </Style>
-
+        
         <Style TargetType="MenuItem"
                x:Key="DropDownMenuItem">
             <Setter Property="Background" Value="{StaticResource DefaultBackground}"/>
@@ -81,8 +76,8 @@
             <MenuItem Style="{StaticResource MainMenuItem}">
                 <MenuItem.Header>
                     <StackPanel Background="{StaticResource DefaultBackground}">
-                        <!--TODO(Maksym): revisit logo later, not work-->
-                        <Image Width="20" Height="20" Source="Resources/Images/logo.png" />
+                        <!-- TODO(Maksym): Remove IsHighlighted action -->
+                        <Image Width="20" Height="20" Source="Resources/Images/logo.png"/>
                     </StackPanel>
                 </MenuItem.Header>
             </MenuItem>

@@ -130,6 +130,11 @@
     <Resource Include="Resources\CBaseSyntax.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Images\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\Images\logo.ico" />
   </ItemGroup>
   <ItemGroup>
