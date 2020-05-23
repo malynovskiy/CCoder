@@ -31,9 +31,18 @@ namespace CCoder
         private void onTextChanged(object sender, TextChangedEventArgs eventArgs)
         {
             CodeTextBox.Text = FileTextBox.Text;
+        }
 
-            //if(view != null)
-            //    view.Editor.TextChangeHandler(ref sender, ref eventArgs);
+        private void onSaveClicked(object sender, RoutedEventArgs e)
+        {
+            MainView view = (MainView)DataContext;
+            if (view == null)
+                return;
+
+            // updating Document.Text (from ModernTextBox) before doing Save command
+            ref Document doc = ref view.getCurrentDocument();
+            if (doc != null && CodeTextBox.Text != null)
+                doc.Text = CodeTextBox.Text;
         }
     }
 }

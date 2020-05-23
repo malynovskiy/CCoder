@@ -63,8 +63,8 @@
                       ItemContainerStyle="{StaticResource DropDownMenuItem}">
                 <MenuItem Header="New" Command="{Binding NewCommand}"/>
                 <MenuItem Header="Open" Command="{Binding OpenCommand}"/>
-                <MenuItem Header="Save" Command="{Binding SaveCommand}"/>
-                <MenuItem Header="Save as" Command="{Binding SaveAsCommand}"/>
+                <MenuItem Header="Save" Command="{Binding SaveCommand}" Click="onSaveClicked"/>
+                <MenuItem Header="Save as" Command="{Binding SaveAsCommand}" Click="onSaveClicked"/>
             </MenuItem>
             <MenuItem Header="Preferences" 
                       DataContext="{Binding Editor}"

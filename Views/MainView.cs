@@ -16,6 +16,8 @@ namespace CCoder.Views
         public FileView File { get; set; }
         public HelpView Help { get; set; }
 
+        public ref Document getCurrentDocument() { return ref _document; }
+
         public MainView()
         {
             _document = new Document();
