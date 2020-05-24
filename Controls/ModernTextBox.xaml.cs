@@ -145,6 +145,7 @@ namespace CCoder.Controls
             while (blocksRunningCount > 0)
                 Console.WriteLine("Waiting for other threads!\n");
 
+            UpdateTextStyles();
             DrawTextBlocks();
             base.OnRender(drawingContext);
         }
@@ -315,6 +316,15 @@ namespace CCoder.Controls
             }
             dc.Close();
             dc2.Close();
+        }
+
+        private void UpdateTextStyles()
+        {
+            foreach(InnerTextBlock block in textBlocks)
+            {
+                block.FormattedText.SetFontFamily(this.FontFamily);
+                block.FormattedText.SetFontSize(this.FontSize);
+            }
         }
 
         private void UpdateTotalLineCount()

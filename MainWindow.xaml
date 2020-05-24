@@ -122,7 +122,10 @@
             
             <controls:ModernTextBox 
                     x:Name="CodeTextBox"
-                    IsLineNumbersMarginVisible="True"/>
+                    IsLineNumbersMarginVisible="True"
+                    DataContext="{Binding Editor}"
+                    FontFamily="{Binding Format.Family}"
+                    FontSize="{Binding Format.Size}"/>
             <!--TextBox
                     DockPanel.Dock="Top"
                     VerticalScrollBarVisibility="Visible"
